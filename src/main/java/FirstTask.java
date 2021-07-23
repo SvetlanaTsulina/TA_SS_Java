@@ -19,9 +19,10 @@ public class FirstTask {
                 listOdd.add(i);
             }
 
+
         }
-        System.out.println(listSum(listEven));
-        System.out.println(listSum(listOdd));
+        System.out.println("Sum of all even numbers: " + listSum(listEven));
+        System.out.println("Sum of all odd numbers: "+ listSum(listOdd));
 
     }
 
