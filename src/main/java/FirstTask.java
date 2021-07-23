@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class FirstTask {
+public class FirstTask<buildFibonacci> {
     public static void main(String[] args) {
 
         List<Integer> listOdd = new ArrayList();
@@ -25,8 +25,11 @@ public class FirstTask {
         int F1 = findMax(listOdd);
         int F2 = findMax(listEven);
 
+        int N = getIntFromConsole("Enter the size of set: ");
+
 
     }
+
 
 
     public static int listSum(List<Integer> list) {
