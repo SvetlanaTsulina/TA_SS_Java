@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class FirstTask {
     public static void main(String[] args) {
@@ -21,10 +18,16 @@ public class FirstTask {
 
 
         }
+
         System.out.println("Sum of all even numbers: " + listSum(listEven));
-        System.out.println("Sum of all odd numbers: "+ listSum(listOdd));
+        System.out.println("Sum of all odd numbers: " + listSum(listOdd));
+
+        int F1 = findMax(listOdd);
+        int F2 = findMax(listEven);
+
 
     }
+
 
     public static int listSum(List<Integer> list) {
         int sum = 0;
@@ -39,6 +42,13 @@ public class FirstTask {
         Scanner in = new Scanner(System.in);
         System.out.println(message);
         return in.nextInt();
+    }
+
+    public static int findMax(List<Integer> list) {
+        return list.stream()
+                .mapToInt(v -> v)
+                .max()
+                .orElse(Integer.MIN_VALUE);
     }
 
 
