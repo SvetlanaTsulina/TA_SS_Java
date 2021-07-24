@@ -15,8 +15,6 @@ public class FirstTask {
             } else {
                 listOdd.add(i);
             }
-
-
         }
 
         System.out.println("Sum of all even numbers: " + listSum(listEven));
@@ -27,14 +25,19 @@ public class FirstTask {
 
         int n = getIntFromConsole("Enter the size of set: ");
 
-        System.out.println("Fibonacci Series: " + buildFibonacci(f1, f2, n));
+        List<Integer> listFibonacci = buildFibonacci(f1, f2, n);
+        System.out.println("Fibonacci Series: " + listFibonacci);
+
+        countPercentage(listFibonacci);
+
+
 
 
     }
 
 
     public static List<Integer> buildFibonacci(int f1, int f2, int n) {
-        List<Integer> listFibonacci = new ArrayList<>();
+        List<Integer> listFibonacci = new ArrayList();
         int next; // The next element of Fibonacci Series
 
         for (int i = 3; i <= n; i++) {
@@ -43,9 +46,11 @@ public class FirstTask {
             f2 = next;
             listFibonacci.add(next);
         }
+
         return listFibonacci;
 
     }
+
 
 
     public static int listSum(List<Integer> list) {
@@ -68,6 +73,18 @@ public class FirstTask {
                 .mapToInt(v -> v)
                 .max()
                 .orElse(Integer.MIN_VALUE);
+    }
+
+    public static void countPercentage(List<Integer> list){
+        int evenSum = Math.round(list.stream().filter(n -> n % 2 == 0).count());
+        int evenPercentage = evenSum*100/list.size();
+
+        int oddSum = Math.round(list.stream().filter(n -> n % 2 != 0).count());
+        int oddPercentage = oddSum*100/list.size();
+
+        System.out.println("Percentage of Evens in Fibonacci: " + evenPercentage +"%\nPercentage of Odds in Fibonacci: " + oddPercentage + "%");
+
+
     }
 
 
