@@ -31,8 +31,6 @@ public class FirstTask {
         countPercentage(listFibonacci);
 
 
-
-
     }
 
 
@@ -50,7 +48,6 @@ public class FirstTask {
         return listFibonacci;
 
     }
-
 
 
     public static int listSum(List<Integer> list) {
@@ -75,14 +72,14 @@ public class FirstTask {
                 .orElse(Integer.MIN_VALUE);
     }
 
-    public static void countPercentage(List<Integer> list){
+    public static void countPercentage(List<Integer> list) {
         int evenSum = Math.round(list.stream().filter(n -> n % 2 == 0).count());
-        int evenPercentage = evenSum*100/list.size();
+        int evenPercentage = evenSum * 100 / list.size();
 
         int oddSum = Math.round(list.stream().filter(n -> n % 2 != 0).count());
-        int oddPercentage = oddSum*100/list.size();
+        int oddPercentage = oddSum * 100 / list.size();
 
-        System.out.println("Percentage of Evens in Fibonacci: " + evenPercentage +"%\nPercentage of Odds in Fibonacci: " + oddPercentage + "%");
+        System.out.println("Percentage of Evens in Fibonacci: " + evenPercentage + "%\nPercentage of Odds in Fibonacci: " + oddPercentage + "%");
 
 
     }
