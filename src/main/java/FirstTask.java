@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class FirstTask<buildFibonacci> {
+public class FirstTask {
     public static void main(String[] args) {
 
         List<Integer> listOdd = new ArrayList();
@@ -22,10 +22,35 @@ public class FirstTask<buildFibonacci> {
         System.out.println("Sum of all even numbers: " + listSum(listEven));
         System.out.println("Sum of all odd numbers: " + listSum(listOdd));
 
-        int F1 = findMax(listOdd);
-        int F2 = findMax(listEven);
+        int f1 = findMax(listOdd);
+        int f2 = findMax(listEven);
 
-        int N = getIntFromConsole("Enter the size of set: ");
+        int n = getIntFromConsole("Enter the size of set: ");
+
+        System.out.println("Fibonacci Series: " + buildFibonacci(f1, f2, n));
+
+
+
+
+
+
+
+    }
+
+
+    public static List<Integer> buildFibonacci(int f1, int f2, int n){
+        List<Integer> listFibonacci = new ArrayList<>();
+        int next; // The next element of Fibonacci Series
+
+            for(int i = 3; i <= n; i++){
+            next = f1 + f2;
+            f1 = f2;
+            f2 = next;
+            listFibonacci.add(next);
+        }
+            return listFibonacci;
+
+
 
 
     }
