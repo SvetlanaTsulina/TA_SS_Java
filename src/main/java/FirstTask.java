@@ -30,31 +30,22 @@ public class FirstTask {
         System.out.println("Fibonacci Series: " + buildFibonacci(f1, f2, n));
 
 
-
-
-
-
-
     }
 
 
-    public static List<Integer> buildFibonacci(int f1, int f2, int n){
+    public static List<Integer> buildFibonacci(int f1, int f2, int n) {
         List<Integer> listFibonacci = new ArrayList<>();
         int next; // The next element of Fibonacci Series
 
-            for(int i = 3; i <= n; i++){
+        for (int i = 3; i <= n; i++) {
             next = f1 + f2;
             f1 = f2;
             f2 = next;
             listFibonacci.add(next);
         }
-            return listFibonacci;
-
-
-
+        return listFibonacci;
 
     }
-
 
 
     public static int listSum(List<Integer> list) {
